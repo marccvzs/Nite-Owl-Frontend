@@ -8,17 +8,17 @@ import MyReservations from './MyReservations';
 
 function App() {
   return (
-    <div className="bg-blue-700">
+    <div className="flex">
       <NavBar />
       <Switch>
-        <Route>
-          <RestaurantPage path='/restaurants'/>
+        <Route  exact path='/restaurants'>
+          <RestaurantPage/>
         </Route>
-        <Route>
-          <MyReservations path='/reservations' />
-        </Route>
-        <Route>
-          <Home path='/'/>
+        <Route exact path='/reservations'>
+          <MyReservations  />
+        </Route >
+        <Route exact path='/'>
+          <Home />
         </Route>
       </Switch>
     </div>
