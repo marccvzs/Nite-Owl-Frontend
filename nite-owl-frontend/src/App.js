@@ -14,7 +14,7 @@ function App() {
         <Route  path='/restaurants'>
           <RestaurantPage/>
         </Route>
-        <Route exact path='/reservations'>
+        <Route exact path='/user/:id/reservations'>
           <MyReservations  />
         </Route >
         <Route exact path='/'>

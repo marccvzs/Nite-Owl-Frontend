@@ -9,7 +9,6 @@ function RestaurantList() {
     .then(r => r.json())
     .then(restaurantsArray => setRestaurants(restaurantsArray))
   })
-  console.log(restaurants)
   
   const restaurantsList = restaurants.map(restaurant => {
     return (
