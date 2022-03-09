@@ -6,7 +6,10 @@ function RestaurantList({ restaurantArray }) {
     return <RestaurantItem key={rest.id} rest={rest} />;
   });
   
-  return <div>{restaurants}</div>;
+  return<>
+  <h2>Find Your New Favorite Spot</h2>
+   <div className="restaurantListContainer">{restaurants}</div>;
+   </>
 }
 
 export default RestaurantList;

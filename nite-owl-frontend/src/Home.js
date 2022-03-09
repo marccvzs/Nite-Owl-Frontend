@@ -1,12 +1,12 @@
 import React from "react";
-import header from "./images/pexels-photo-5865071.jpg";
+import banner from "./images/NewBanner.jpg";
+
 function Home() {
   return (
     <>
-      <div className="relative ">
-        <img className="w-full flex" src={header} />
-        <div className="absolute top-0 text-white">Nite Owl</div>
-  
+      <div className="banner">
+        <img id="header" alt="restaurant" src={banner} />
+        <p id="title">Nite Owl</p>
       </div>
     </>
   );

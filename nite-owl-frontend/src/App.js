@@ -11,7 +11,7 @@ function App() {
     <div className="flex">
       <NavBar />
       <Switch>
-        <Route  exact path='/restaurants'>
+        <Route  path='/restaurants'>
           <RestaurantPage/>
         </Route>
         <Route exact path='/reservations'>
