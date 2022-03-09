@@ -25,7 +25,6 @@
 }
 
 #banner_divider{
-  
   background: #0e0020;
   background-position: center;
   border: 4px solid #0e0020;
@@ -46,13 +45,15 @@
 
 }
 
-
+.nav{
+  position: relative;
+}
 .nav, .homeNav {
   font-family: 'Hubballi', cursive;
   color: black;
   font-size: 30px;
   text-decoration: none;
-  position: relative;
+  /* position: relative; */
   margin: 0 20px;
   opacity: 1
 }
@@ -79,8 +80,6 @@
 .homeNav{
 
 }
-
-
 
 #title{
   position: absolute;
