@@ -1,163 +1,172 @@
+<<<<<<< HEAD
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
 
 *{
+=======
+* {
+>>>>>>> styling2electricboogaloo
   margin: 0;
-  
+}
+body {
+  font-family: "Hubballi", cursive;
 }
 #banner {
   position: relative;
   width: 100%;
   height: 100vh;
   opacity: 1;
-  margin: 0; 
+  margin: 0;
   background: #0e0020;
-  z-index: -1
 }
 
-#banner_image{
-  width:100%;
+#banner_image {
+  width: 100%;
   height: 100%;
-  background-image: url('./images/TrialBanner.jpg');
-  background-size:cover;
-  filter: brightness(70%);
+  background-image: url("./images/TrialBanner.jpg");
+  background-size: cover;
+  filter: brightness(90%);
   background-position: center;
-  -webkit-clip-path:polygon(0 37%, 100% 14%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 37%, 100% 14%, 100% 100%, 0 100%);
   clip-path: polygon(0 37%, 100% 14%, 100% 100%, 0 100%);
-  z-index: 0;
 }
 
-#banner_divider{
+#banner_divider {
   background: #0e0020;
   background-position: center;
   border: 4px solid #0e0020;
-  position:absolute;
-  top:23%;
+  position: absolute;
+  top: 23%;
   left: 4%;
-  box-shadow: 0 0 15px 1px #524462,
-  0 0 3px  #ffffff;
-  width:38%;
+  box-shadow: 0 0 15px 1px #524462, 0 0 3px #ffffff;
+  width: 38%;
 }
 
-.navBar, #bannerLinks{
+.navBar {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   height: 50px;
-
 }
+#bannerLinks {
+  display: flex;
 
-.nav{
-  position: relative;
+  width: 100%;
+  position: absolute;
+  bottom: 2%;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.nav, .homeNav {
-  font-family: 'Hubballi', cursive;
-  color: black;
+.nav {
+  color: #0e0020;
   font-size: 30px;
-  text-decoration: none;
-  /* position: relative; */
-  margin: 0 20px;
-  opacity: 1
 }
-.nav::before, .homeNav::before {
-  content: '';
+.homeNav {
+  font-size: 50px;
+  color: #DAA428;
+  /* -webkit-text-stroke: 1px #0e0020;
+  -webkit-text-fill-color: #DAA428; */
+  text-shadow: 0 0 15px #DAA428, 0 0 10px #0e0020;
+  z-index: 2;
+
+}
+.nav,
+.homeNav {
+  position: relative;
+  text-decoration: none;
+  position: relative;
+  margin: 0 20px;
+}
+.nav::before {
   background-color: #a0c1b8;
+}
+.homeNav::before {
+  background-color: #DAA428
+}
+.nav::before,
+.homeNav::before {
+  content: "";
   position: absolute;
   left: 0;
   bottom: 3px;
   width: 100%;
   height: 8px;
   z-index: -1;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.nav:hover::before, .homeNav:hover::before{
+.nav:hover::before,
+.homeNav:hover::before {
   bottom: 0;
   height: 100%;
 }
 
-.bannerLinks{
-  position: absolute;
-  top:20%
-}
-.homeNav{
-
-}
-
-#title{
+#title {
   position: absolute;
   color: #0e0020;
   font-size: 160px;
   top: 0%;
   left: 3%;
-  text-shadow: 0 0 15px #524462,
-  0 0 2px #ffffff
-  ;
-  font-family: 'Megrim', cursive;
-  font-weight:600
+  text-shadow: 0 0 15px #524462, 0 0 4px #ffffff;
+  font-family: "Megrim", cursive;
+  font-weight: 600;
 }
-
-.imgTileContainer{
-  margin-top:50px;
+.imgTileContainer {
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  width:100%;
+  width: 100%;
   row-gap: 4px;
 }
-.imgTile{
-  height:30vh;
-  flex-grow:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.imgTile {
+  height: 30vh;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.imgTile p{
+.imgTile p {
   font-size: 40px;
   position: absolute;
-  color:#0a043c;
-  text-shadow: 2px 2px 3px #ffe3d8,
-  -2px -2px 3px #ffe3d8;
-  font-family: 'Hubballi', cursive;
+  color: #0a043c;
+  text-shadow: 2px 2px 3px #ffe3d8, -2px -2px 3px #ffe3d8;
 }
-img{
-  transition: opacity .5s ease;
-  opacity: .3;
+img {
+  transition: opacity 0.5s ease;
+  opacity: 0.3;
   max-height: 100%;
   width: 100%;
-  object-fit:cover;
-  margin:2px;
+  object-fit: cover;
+  margin: 2px;
 }
-img:hover{
-  opacity: .8;
+img:hover {
+  opacity: 0.8;
 }
-h2{
+h2 {
   font-size: 50px;
-  margin:50px 0 0 20px;
+  margin: 50px 0 0 20px;
 }
-.restaurantListContainer{
-  margin-top:50px;
+.restaurantListContainer {
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  overflow:scroll;
+  overflow: scroll;
   justify-content: flex-start;
-
 }
-.listItem{
+.listItem {
   display: flex;
   flex: 35%;
   padding-left: 20px;
   margin-bottom: 20px;
   width: 25%;
-  align-items:center;
+  align-items: center;
 }
-.listImage{
+.listImage {
   height: 150px;
   width: 150px;
   opacity: 1;
 }
-.blurb{
+.blurb {
   margin-left: 15px;
-  font-family: 'Hubballi', cursive;
 }
-
