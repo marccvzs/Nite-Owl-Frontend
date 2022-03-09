@@ -1,30 +1,117 @@
 *{
   margin: 0;
-  font-family: 'Hubballi', cursive;
+  
 }
-#header {
+#banner {
   position: relative;
   width: 100%;
-  filter: brightness 50%;
+  height: 100vh;
   opacity: 1;
-  margin: 0
+  margin: 0; 
+  background: #0e0020;
+  z-index: -1
 }
+
+#banner_image{
+  width:100%;
+  height: 100%;
+  background-image: url('./images/TrialBanner.jpg');
+  background-size:cover;
+  filter: brightness(70%);
+  background-position: center;
+  -webkit-clip-path:polygon(0 37%, 100% 14%, 100% 100%, 0 100%);
+  clip-path: polygon(0 37%, 100% 14%, 100% 100%, 0 100%);
+  z-index: 0;
+}
+
+#banner_divider{
+  
+  background: #0e0020;
+  background-position: center;
+  border: 4px solid #0e0020;
+  position:absolute;
+  top:23%;
+  left: 4%;
+  box-shadow: 0 0 15px 1px #524462,
+  0 0 3px  #ffffff;
+  width:38%;
+}
+
+.navBar{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+
+}
+
+
+.nav {
+  font-family: 'Hubballi', cursive;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  position: relative;
+  margin: 0 20px;
+  opacity: 1
+}
+.nav::before {
+  content: '';
+  background-color: #a0c1b8;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+.nav:hover::before {
+  bottom: 0;
+  height: 100%;
+}
+.homeNav {
+  font-family: 'Hubballi', cursive;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  position: relative;
+  top:50%;
+  margin: 0 20px;
+  opacity: 1
+}
+.homeNav::before {
+  content: '';
+  background-color: #a0c1b8;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+.homeNav:hover::before {
+  bottom: 0;
+  height: 100%;
+}
+
+
 
 #title{
   position: absolute;
-  color: #250c46;
-  font-size: 120px;
-  padding-right: 50px;
-  padding-top: 155px;
-  text-shadow: 0 0 2px white;
-}
-.banner{
-  display: flex;
-  justify-content:end;
-  align-items: start;
+  color: #0e0020;
+  font-size: 160px;
+  top: 0%;
+  left: 3%;
+  text-shadow: 0 0 15px #524462,
+  0 0 2px #ffffff
+  ;
   font-family: 'Megrim', cursive;
-  font-weight: 600
+  font-weight:600
 }
+
 .imgTileContainer{
   margin-top:50px;
   display: flex;
@@ -45,6 +132,7 @@
   color:#0a043c;
   text-shadow: 2px 2px 3px #ffe3d8,
   -2px -2px 3px #ffe3d8;
+  font-family: 'Hubballi', cursive;
 }
 img{
   transition: opacity .5s ease;
@@ -84,5 +172,6 @@ h2{
 }
 .blurb{
   margin-left: 15px;
+  font-family: 'Hubballi', cursive;
 }
 
