@@ -1,25 +1,26 @@
 import React, { useState, useEffect} from "react";
 import RestaurantItem from "./RestaurantItem";
 
-function RestaurantList() {
+function RestaurantList( { search }) {
   const [restaurants, setRestaurants] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:9292/restaurants')
     .then(r => r.json())
     .then(restaurantsArray => setRestaurants(restaurantsArray))
-  })
+  }, [])
   
-  const restaurantsList = restaurants.map(restaurant => {
+  const restaurantsList = restaurants.filter(restaurant => {
     return (
-      <RestaurantItem key={restaurant.id} rest={restaurant}/>
+      restaurant.restaurant_name.toLowerCase().includes(search.toLowerCase())
     )
   })
 
   return(
   <>
-    <h2>Find Your New Favorite Spot</h2>
-    <div className="restaurantListContainer">{restaurantsList}</div>;
+    <div className="restaurantListContainer">
+      <RestaurantItem list={restaurantsList}/>
+    </div>;
    </>)
 }
 

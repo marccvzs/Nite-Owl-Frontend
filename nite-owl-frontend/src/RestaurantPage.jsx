@@ -2,6 +2,7 @@ import React, { useEffect, useState} from "react";
 import {useHistory} from 'react-router-dom';
 import RestaurantList from "./RestaurantList";
 import ScheduleForm from "./ScheduleForm";
+import Search from './Search';
 import brewery from "./images/Brewery.jpg";
 import comfort from "./images/Comfort.jpg";
 import communal from "./images/Communal.jpg";
@@ -13,6 +14,7 @@ import pate from "./images/Winery.jpg";
 import vegan from "./images/Vegan.jpg";
 
 function RestaurantPage() {
+  const [search, setSearch] = useState('')
   const history = useHistory();
 
   // search bar here
@@ -35,7 +37,9 @@ function RestaurantPage() {
         <div className="imgTile"><img name="Breweries" onClick={handleClick} src={brewery} alt="Breweries"/><p>Breweries</p></div>
         <div className="imgTile"><img name="French" onClick={handleClick} src={french} alt="French"/><p>French</p></div>
       </div>
-      <RestaurantList />
+      <h2>Find Your New Favorite Spot</h2>
+      <Search search={search} onSearch={setSearch}/>
+      <RestaurantList search={search}/>
       <ScheduleForm />
     </div>
   );

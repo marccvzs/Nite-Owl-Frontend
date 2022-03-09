@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import RestaurantPage from './RestaurantPage';
 import Home from './Home';
 import MyReservations from './MyReservations';
+import Restaurant from './Restaurant';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       <Switch>
         <Route  path='/restaurants'>
           <RestaurantPage/>
+        </Route>
+        <Route path='/restaurant/:id'>
+          <Restaurant/>
         </Route>
         <Route exact path='/user/:id/reservations'>
           <MyReservations  />

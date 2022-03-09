@@ -15,9 +15,10 @@ function Restaurant() {
   return (
     <div>
         <h2>{restaurant.restaurant_name}</h2>
-        <img src={restaurant.restaurant_image} alt={restaurant.restaurant_name}/>
+        <img style={{ opacity: 100 }}src={restaurant.restaurant_image} alt={restaurant.restaurant_name}/>
         <p>{restaurant.address}</p>
         <p>{restaurant.price}</p>
+        <button>Make a Reservation</button>
     </div>
   )
 }

@@ -1,22 +1,30 @@
 import React from "react";
 
-function RestaurantItem({ rest }) {
-  const { restaurant_name, address, price, restaurant_image, cuisine } = rest;
-  console.log(restaurant_name, address, price, cuisine)
-  return (
-    <div className="listItem">
-      <img className="listImage" src={restaurant_image} alt={restaurant_name}></img>
-      <div className="blurb">
-        <p style={{ fontSize: "36px" }}>{restaurant_name}</p>
-        <br></br>
-        <p style={{ fontSize: "24px" }}>{cuisine}</p>
-        <br></br>
-        <p>{address}</p>
-        <br></br>
-        <p style={{ fontSize: "20px" }}>{price}</p>
+function RestaurantItem({ list }) {
+  
+    const restaurants = list.map(rest => {
+      
+      return (
+      <div className="listItem" key={rest.id}>
+        <img className="listImage" src={rest.restaurant_image} alt={rest.restaurant_name}></img>
+        <div className="blurb">
+          <p style={{ fontSize: "36px" }}>{rest.restaurant_name}</p>
+          <br></br>
+          <p style={{ fontSize: "24px" }}>{rest.cuisine}</p>
+          <br></br>
+          <p>{rest.address}</p>
+          <br></br>
+          <p style={{ fontSize: "20px" }}>{rest.price}</p>
+        </div>
       </div>
-    </div>
-  );
+
+      )
+    })
+  return (
+    <>
+      {restaurants}
+    </>
+  )
 }
 
 export default RestaurantItem;
