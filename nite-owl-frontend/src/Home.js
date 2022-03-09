@@ -10,9 +10,9 @@ function Home() {
         <div id="banner_divider"></div>
         <p id="title">Nite Owl</p>
         <div id="bannerLinks">
-        <Link className="homeNav" to='/'>Home</Link>
-        <Link className="homeNav" to='/restaurants'>Make a Date</Link>
-        <Link className="homeNav" to='/reservations'>Your Reservations</Link>
+        {/* <Link className="homeNav" to='/'>Home</Link> */}
+        <Link className="homeNav" to='/restaurants'>Enter</Link>
+        {/* <Link className="homeNav" to='/reservations'>Your Reservations</Link> */}
         </div>
       </div>
     </>
