@@ -9,16 +9,20 @@ import MyReservations from './MyReservations';
 function App() {
   return (
     <div className="flex">
-      <NavBar />
       <Switch>
-        <Route  path='/restaurants'>
-          <RestaurantPage/>
-        </Route>
-        <Route exact path='/user/:id/reservations'>
-          <MyReservations  />
-        </Route >
-        <Route exact path='/'>
+        <Route exact path="/">
           <Home />
+        </Route>
+        <Route>
+          <NavBar />
+          <Switch>
+            <Route path="/restaurants">
+              <RestaurantPage />
+            </Route>
+            <Route exact path="/user/:id/reservations">
+              <MyReservations />
+            </Route>
+          </Switch>
         </Route>
       </Switch>
     </div>
