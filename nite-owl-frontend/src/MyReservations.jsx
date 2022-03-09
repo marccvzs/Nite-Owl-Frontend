@@ -13,10 +13,15 @@ function MyReservations() {
   }, [])
   
   const reservationsList = reservations.map(res => {
-    console.log(res.restaurant)
+    console.log(res)
     return (
       
-      <ReservationItem key={res.id} res={res.restaurant} />
+      <ReservationItem 
+      key={res.id} 
+      details={res.details}
+      num_guests={res.num_guests}
+      res={res.restaurant} 
+      />
     )
   })
 
