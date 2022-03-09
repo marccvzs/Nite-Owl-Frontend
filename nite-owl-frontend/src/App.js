@@ -11,20 +11,7 @@ function App() {
   return (
     <div className="flex">
       <Switch>
-<<<<<<< HEAD
         <Route exact path="/">
-=======
-        <Route  path='/restaurants'>
-          <RestaurantPage/>
-        </Route>
-        <Route path='/restaurant/:id'>
-          <Restaurant/>
-        </Route>
-        <Route exact path='/user/:id/reservations'>
-          <MyReservations  />
-        </Route >
-        <Route exact path='/'>
->>>>>>> new-features
           <Home />
         </Route>
         <Route>
@@ -32,6 +19,9 @@ function App() {
           <Switch>
             <Route path="/restaurants">
               <RestaurantPage />
+            </Route>
+            <Route path='/restaurant/:id'>
+              <Restaurant />
             </Route>
             <Route exact path="/user/:id/reservations">
               <MyReservations />
