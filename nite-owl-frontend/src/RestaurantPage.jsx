@@ -30,10 +30,10 @@ function RestaurantPage() {
         <div className="imgTile"><img name="Latin" onClick={handleClick} src={latin} alt="Latin"/><p>Latin</p></div>
         <div className="imgTile"><img name="Wineries" onClick={handleClick} src={pate} alt="Wineries"/><p>Wineries</p></div>
         <div className="imgTile"><img name="Comfort" onClick={handleClick} src={comfort} alt="Comfort"/><p>Comfort</p></div>
+        <div className="imgTile"><img name="Vegan" onClick={handleClick} src={vegan} alt="Vegan"/><p>Vegan</p></div>
         <div className="imgTile"><img name="Communal" onClick={handleClick} src={communal} alt="Communal"/><p>Communal</p></div>
         <div className="imgTile"><img name="Breweries" onClick={handleClick} src={brewery} alt="Breweries"/><p>Breweries</p></div>
         <div className="imgTile"><img name="French" onClick={handleClick} src={french} alt="French"/><p>French</p></div>
-        <div className="imgTile"><img name="Vegan" onClick={handleClick} src={vegan} alt="Vegan"/><p>Vegan</p></div>
       </div>
       <RestaurantList />
       <ScheduleForm />
