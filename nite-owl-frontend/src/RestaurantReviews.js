@@ -9,7 +9,13 @@ function RestaurantReviews({ id }) {
         .then(r => setReviews(r))
     }, [])
 
-    console.log(reviews)
+    function handleDelete(review_id) {
+        fetch(`http://localhost:9292/review/${review_id}`, {
+            method: 'DELETE'
+        })
+        .then(r => r.json())
+        .then(data => console.log(data))
+    }
 
     const reviewsList = reviews.map(r => {
         return (
@@ -18,7 +24,7 @@ function RestaurantReviews({ id }) {
                 <p>{r.review}</p>
                 <p>{r.stars}</p>
                 <button>Edit Review</button>
-                <button>Delete Review</button>
+                <button onClick={() => handleDelete(r.id)}>Delete Review</button>
             </div>
         )
     })
