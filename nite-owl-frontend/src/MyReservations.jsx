@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReservationItem from './ReservationItem';
+import UserReviews from './UserReviews';
 
 function MyReservations() {
   const [reservations, setReservations] = useState([])
@@ -23,10 +24,11 @@ function MyReservations() {
       />
     )
   })
-
+  
   return (
     <div>
       {reservationsList}
+      <UserReviews id={id}/>
     </div>
   )
 }

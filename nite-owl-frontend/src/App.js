@@ -28,9 +28,6 @@ function App() {
             <Route path='/restaurant/:id'>
               <Restaurant/>
             </Route>
-            <Route path='/user/:id/reviews'>
-              <UserReviews />  
-            </Route>
             <Route exact path="/user/:id/reservations">
               <MyReservations />
             </Route>
