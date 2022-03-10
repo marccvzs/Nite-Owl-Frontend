@@ -42,7 +42,7 @@ function RestaurantPage() {
 
   return (
     <div>
-      <h1>Our Favorites</h1>
+      <h1 >Our Favorites</h1>
   
         <div className="imgTileContainer">{allImages}</div>
 

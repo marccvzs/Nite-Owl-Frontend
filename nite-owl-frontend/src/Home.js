@@ -12,6 +12,7 @@ function Home() {
         <div id="bannerLinks">
         {/* <Link className="homeNav" to='/'>Home</Link> */}
         <Link className="homeNav" to='/restaurants'>Enter</Link>
+        <div className="homeNavDivider"></div>
         {/* <Link className="homeNav" to='/reservations'>Your Reservations</Link> */}
         </div>
       </div>
