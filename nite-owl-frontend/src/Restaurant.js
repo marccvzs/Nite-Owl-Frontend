@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom";
 import RestaurantReviews from './RestaurantReviews';
 import ReviewForm from './ReviewForm';
 
+
 function Restaurant() {
   const [restaurant, setRestaurant] = useState({});
   const [leaveReview, setLeaveReview] = useState(false);
+  const [makeReservation, setMakeReservation]=useState(false)
   const { id } = useParams();
 
   useEffect(() => {
@@ -26,14 +28,14 @@ function Restaurant() {
         <p className="description">{restaurant.description}</p>
         <p>{restaurant.address}</p>
         <p>{restaurant.price}</p>
-        <button>Make a Reservation</button>
         <button onClick={() => handleLeaveReview()}>{leaveReview ? 'Leave a' : 'Exit'} Review</button>
         <div>{leaveReview ? null : <ReviewForm id={id}/>}</div>
+        <button>Make a Reservation</button>
       </div>
       <div>
-      <h3>Reviews</h3>
-      
-      <RestaurantReviews id={id} />
+        <h3>Reviews</h3>
+
+        <RestaurantReviews id={id} />
       </div>
     </div>
   );

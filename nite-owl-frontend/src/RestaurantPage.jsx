@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RestaurantList from "./RestaurantList";
-import ScheduleForm from "./ScheduleForm";
 import Search from "./Search";
 import brewery from "./images/Brewery.jpg";
 import comfort from "./images/Comfort.jpg";
@@ -32,24 +31,23 @@ function RestaurantPage() {
     const type = Object.keys(img);
     return (
       <Link className="imgTile" to={{ pathname: `/restaurants/${type}` }}>
-    
-          <img src={pic} alt="" />
-          <p>{type}</p>
-   
+        <img src={pic} alt="" />
+        <p>{type}</p>
       </Link>
     );
   });
 
   return (
     <div>
-      <h1 >Our Favorites</h1>
-  
-        <div className="imgTileContainer">{allImages}</div>
+      <h1>Our Favorites</h1>
 
-      <h1>Find Your New Favorite Spot</h1>
-      <Search search={search} onSearch={setSearch} />
-      <RestaurantList search={search} />
-      <ScheduleForm />
+      <div className="imgTileContainer">{allImages}</div>
+      <div className="searchHeader">
+        <h1>Find Your New Favorite Spot</h1>
+
+        <Search search={search} onSearch={setSearch} />
+      </div>
+      <RestaurantList search={search}/>
     </div>
   );
 }
