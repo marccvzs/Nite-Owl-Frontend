@@ -32,9 +32,6 @@ function App() {
             <Route exact path="/user/:id/reservations">
               <MyReservations />
             </Route>
-            <Route exact path="/restaurant/:id/schedule">
-              <ScheduleForm/>
-            </Route>
           </Switch>
         </Route>
       </Switch>
