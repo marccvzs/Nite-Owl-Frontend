@@ -20,22 +20,22 @@ function RestaurantPage() {
     { indian: indian },
     { latin: latin },
     { pate: pate },
-    { comfort: comfort },
     { vegan: vegan },
-    { communal: communal },
-    { brewery: brewery },
     { french: french },
+    { communal: communal },
+    { comfort: comfort },
+    { brewery: brewery },
   ];
 
   const allImages = images.map((img) => {
     const pic = Object.values(img);
     const type = Object.keys(img);
     return (
-      <Link to={{ pathname: `/restaurants/${type}` }}>
-        <div className="imgTile">
+      <Link className="imgTile" to={{ pathname: `/restaurants/${type}` }}>
+    
           <img src={pic} alt="" />
           <p>{type}</p>
-        </div>
+   
       </Link>
     );
   });

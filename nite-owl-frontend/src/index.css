@@ -1,5 +1,4 @@
-* {
-
+ {
   margin: 0;
 }
 body {
@@ -58,12 +57,9 @@ body {
 }
 .homeNav {
   font-size: 50px;
-  color: #DAA428;
-  /* -webkit-text-stroke: 1px #0e0020;
-  -webkit-text-fill-color: #DAA428; */
-  text-shadow: 0 0 15px #DAA428, 0 0 10px #0e0020;
+  color: #daa428;
+  text-shadow: 0 0 15px #daa428, 0 0 10px #0e0020;
   z-index: 2;
-
 }
 .nav,
 .homeNav {
@@ -76,7 +72,7 @@ body {
   background-color: #a0c1b8;
 }
 .homeNav::before {
-  background-color: #DAA428
+  background-color: #daa428;
 }
 .nav::before,
 .homeNav::before {
@@ -118,7 +114,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .imgTile p {
   font-size: 40px;
@@ -126,18 +121,16 @@ body {
   color: #0a043c;
   text-shadow: 2px 2px 3px #ffe3d8, -2px -2px 3px #ffe3d8;
 }
-img {
+.imgTile img {
   transition: opacity 0.5s ease;
   opacity: 0.3;
   max-height: 100%;
   width: 100%;
   object-fit: cover;
   margin: 2px;
+  flex-grow: 1;
 }
-span {
-flex-grow:10
-}
-img:hover {
+.imgTile img:hover {
   opacity: 0.8;
 }
 h2 {
@@ -166,4 +159,24 @@ h2 {
 }
 .blurb {
   margin-left: 15px;
+}
+
+/* Restaurant/id Page */
+
+.restPageContent {
+  display:flex;
+
+}
+
+.restInfo {
+  display: flex;
+  flex-direction: column;
+  margin-left:20px;
+}
+.restInfo h2
+.description {
+  width:90%
+}
+button{
+  width:100px;
 }
