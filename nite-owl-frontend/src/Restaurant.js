@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import RestaurantReviews from './RestaurantReviews';
+import ReviewForm from './ReviewForm';
 
 function Restaurant() {
   const [restaurant, setRestaurant] = useState({});
+  const [leaveReview, setLeaveReview] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -11,6 +13,10 @@ function Restaurant() {
       .then((r) => r.json())
       .then((r) => setRestaurant(r));
   }, [id]);
+
+  function handleLeaveReview() {
+    setLeaveReview(leaveReview => !leaveReview)
+  }
 
   return (
     <div className="restPageContent">
@@ -21,7 +27,8 @@ function Restaurant() {
         <p>{restaurant.address}</p>
         <p>{restaurant.price}</p>
         <button>Make a Reservation</button>
-        <button>Leave a Review</button>
+        <button onClick={() => handleLeaveReview()}>{leaveReview ? 'Leave a' : 'Exit'} Review</button>
+        <div>{leaveReview ? null : <ReviewForm id={id}/>}</div>
       </div>
       <div>
       <h3>Reviews</h3>
