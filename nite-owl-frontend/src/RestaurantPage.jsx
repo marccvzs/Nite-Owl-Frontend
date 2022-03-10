@@ -1,8 +1,8 @@
-import React, { useEffect, useState} from "react";
-import {useHistory} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import RestaurantList from "./RestaurantList";
 import ScheduleForm from "./ScheduleForm";
-import Search from './Search';
+import Search from "./Search";
 import brewery from "./images/Brewery.jpg";
 import comfort from "./images/Comfort.jpg";
 import communal from "./images/Communal.jpg";
@@ -14,32 +14,41 @@ import pate from "./images/Winery.jpg";
 import vegan from "./images/Vegan.jpg";
 
 function RestaurantPage() {
-  const [search, setSearch] = useState('')
-  const history = useHistory();
+  const [search, setSearch] = useState("");
+  const images = [
+    { italian: italian },
+    { indian: indian },
+    { latin: latin },
+    { pate: pate },
+    { comfort: comfort },
+    { vegan: vegan },
+    { communal: communal },
+    { brewery: brewery },
+    { french: french },
+  ];
 
-  // search bar here
-  function handleClick(e){
-    history.push(`/${e.target.name}`)
-    console.log(e.target)
-  }
-  
+  const allImages = images.map((img) => {
+    const pic = Object.values(img);
+    const type = Object.keys(img);
+    return (
+      <Link to={{ pathname: `/restaurants/${type}` }}>
+        <div className="imgTile">
+          <img src={pic} alt="" />
+          <p>{type}</p>
+        </div>
+      </Link>
+    );
+  });
+
   return (
     <div>
       <h2>Our Favorites</h2>
-      <div className="imgTileContainer">
-        <div className="imgTile"><img name="Italian" onClick={handleClick} src={italian} alt="Italian"/><p>Italian</p></div>
-        <div className="imgTile"><img name="Indian" onClick={handleClick} src={indian} alt="Inidia"/><p>Indian</p></div>
-        <div className="imgTile"><img name="Latin" onClick={handleClick} src={latin} alt="Latin"/><p>Latin</p></div>
-        <div className="imgTile"><img name="Wineries" onClick={handleClick} src={pate} alt="Wineries"/><p>Wineries</p></div>
-        <div className="imgTile"><img name="Comfort" onClick={handleClick} src={comfort} alt="Comfort"/><p>Comfort</p></div>
-        <div className="imgTile"><img name="Vegan" onClick={handleClick} src={vegan} alt="Vegan"/><p>Vegan</p></div>
-        <div className="imgTile"><img name="Communal" onClick={handleClick} src={communal} alt="Communal"/><p>Communal</p></div>
-        <div className="imgTile"><img name="Breweries" onClick={handleClick} src={brewery} alt="Breweries"/><p>Breweries</p></div>
-        <div className="imgTile"><img name="French" onClick={handleClick} src={french} alt="French"/><p>French</p></div>
-      </div>
+  
+        <div className="imgTileContainer">{allImages}</div>
+
       <h2>Find Your New Favorite Spot</h2>
-      <Search search={search} onSearch={setSearch}/>
-      <RestaurantList search={search}/>
+      <Search search={search} onSearch={setSearch} />
+      <RestaurantList search={search} />
       <ScheduleForm />
     </div>
   );

@@ -5,7 +5,8 @@ import NavBar from './NavBar';
 import RestaurantPage from './RestaurantPage';
 import Home from './Home';
 import MyReservations from './MyReservations';
-import Restaurant from './Restaurant';
+import Restaurant from './Restaurant'
+import Cuisine from './Cuisine'
 
 function App() {
   return (
@@ -17,11 +18,14 @@ function App() {
         <Route>
           <NavBar />
           <Switch>
-            <Route path="/restaurants">
+          <Route path='/restaurants/:cuisine'>
+              <Cuisine/>
+            </Route>
+            <Route exact path="/restaurants">
               <RestaurantPage />
             </Route>
             <Route path='/restaurant/:id'>
-              <Restaurant />
+              <Restaurant/>
             </Route>
             <Route exact path="/user/:id/reservations">
               <MyReservations />

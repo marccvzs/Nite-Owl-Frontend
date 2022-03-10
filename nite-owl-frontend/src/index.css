@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
-*{
-=======
 * {
->>>>>>> styling2electricboogaloo
+
   margin: 0;
 }
 body {
@@ -125,6 +118,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 .imgTile p {
   font-size: 40px;
@@ -139,6 +133,9 @@ img {
   width: 100%;
   object-fit: cover;
   margin: 2px;
+}
+span {
+flex-grow:10
 }
 img:hover {
   opacity: 0.8;

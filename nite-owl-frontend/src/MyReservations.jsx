@@ -13,7 +13,6 @@ function MyReservations() {
   }, [])
   
   const reservationsList = reservations.map(res => {
-    console.log(res)
     return (
       
       <ReservationItem 

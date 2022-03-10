@@ -10,7 +10,7 @@ function Restaurant() {
         .then(r => r.json())
         .then(r => setRestaurant(r))
     }, [id])
-    console.log(restaurant)
+
 
   return (
     <div>
@@ -18,6 +18,7 @@ function Restaurant() {
         <img style={{ opacity: 100 }}src={restaurant.restaurant_image} alt={restaurant.restaurant_name}/>
         <p>{restaurant.address}</p>
         <p>{restaurant.price}</p>
+        <p>{restaurant.description}</p>
         <button>Make a Reservation</button>
     </div>
   )
