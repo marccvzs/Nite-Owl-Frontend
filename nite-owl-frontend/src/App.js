@@ -6,6 +6,7 @@ import RestaurantPage from './RestaurantPage';
 import Home from './Home';
 import MyReservations from './MyReservations';
 import Restaurant from './Restaurant';
+import UserReviews from './UserReviews';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route path='/restaurant/:id'>
               <Restaurant />
+            </Route>
+            <Route path='/user/:id/reviews'>
+              <UserReviews />  
             </Route>
             <Route exact path="/user/:id/reservations">
               <MyReservations />
