@@ -21,9 +21,11 @@ function Restaurant() {
         <p>{restaurant.address}</p>
         <p>{restaurant.price}</p>
         <button>Make a Reservation</button>
+        <button>Leave a Review</button>
       </div>
       <div>
       <h3>Reviews</h3>
+      
       <RestaurantReviews id={id} />
       </div>
     </div>

@@ -9,10 +9,16 @@ function RestaurantReviews({ id }) {
         .then(r => setReviews(r))
     }, [])
 
+    console.log(reviews)
+
     const reviewsList = reviews.map(r => {
         return (
             <div key={r.id}>
+                <h3>{r.user.name} Says:</h3>
                 <p>{r.review}</p>
+                <p>{r.stars}</p>
+                <button>Edit Review</button>
+                <button>Delete Review</button>
             </div>
         )
     })
