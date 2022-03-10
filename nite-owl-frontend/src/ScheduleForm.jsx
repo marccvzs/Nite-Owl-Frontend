@@ -3,48 +3,77 @@ import Calendar from "react-calendar";
 
 function ScheduleForm({ restaurant }) {
   const [details, setDetails] = useState(new Date());
-  const [rides, setRides]=useState([])
+  const [rides, setRides] = useState([]);
   const [formData, setFormData] = useState({
-    details: "",
-    restaurant_id: restaurant.name,
-    rideshare_id: "",
-    user_id: 161,
-    num_guests: "",
+    details: details,
+    restaurant_id: restaurant.id,
+    rideshare_id: '',
+    user_id: 19,
+    num_guests: '',
   });
 
-  useEffect(()=>{
-    fetch('https://localhost:9292/rideshares')
-    .then(r=>r.json)
-    .then(data=>setRides(data))
-  })
-  console.log(rides)
+  useEffect(() => {
+    fetch("http://localhost:9292/rideshares")
+      .then((r) => r.json())
+      .then((data) => setRides(data));
+  }, []);
 
-  function handleSubmit() {}
-  function handleFormChange(e) {
-    console.log(e.target.value);
-    console.log(e.target.name);
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("http://localhost:9292/reservations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        details: formData.details,
+        restaurant_id: formData.restaurant_id,
+        rideshare_id: formData.rideshare_id,
+        user_id: formData.user_id,
+        num_guests: formData.num_guests,
+      }),
+    })
+      .then((r) => r.json())
+      .then((data) => console.log(data));
   }
+
+  function handleFormChange(e) {
+    const objKey = e.target.name;
+    const objVal = e.target.value;
+
+    setFormData({ ...formData, [objKey]: objVal });
+  }
+
+  const rideOptions = rides.map((r) => {
+    return <option value={r.id}>{r.company}</option>;
+  });
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label for="guests">Number of Guests</label>
-        <input
-          onChange={handleFormChange}
-          name="num_guests"
-          value="formData.num_guests"
-          type="number"
-          step="1"
-        ></input>
-        <label>Transportation</label><br></br>
-        <select name="ride_share_id" onChange={handleFormChange}>
+        <label htmlFor="guests">Number of Guests</label>
+      
+        <select onChange={handleFormChange}
+          value="formData.num_guests" name="num_guests" onChange={handleFormChange}>
+          <option value="null"></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        <label>Transportation</label>
+        <br></br>
+        <select name="rideshare_id" onChange={handleFormChange}>
           <option value="null">Find a Ride</option>
-          <option value="Lyft">Lyft</option>
-          <option value="Uber">Uber</option>
-          <option value="Car Service">Car Service</option>
+          {rideOptions}
         </select>
         <p>{details.toString()}</p>
-        <Calendar onChange={setDetails} value={formData.details} />
+        <Calendar onChange={setDetails} value={formData.details}/>
+        <button type="submit">submit</button>
       </form>
     </div>
   );

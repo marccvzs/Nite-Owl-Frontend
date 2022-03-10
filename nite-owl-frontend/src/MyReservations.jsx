@@ -13,9 +13,6 @@ function MyReservations() {
     .then(reservationsArray => setReservations(reservationsArray))
   }, [])
 
-  console.log(reservations)
-
-
 
   
   const reservationsList = reservations.map(res => {

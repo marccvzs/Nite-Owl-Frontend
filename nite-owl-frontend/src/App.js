@@ -9,6 +9,7 @@ import Restaurant from './Restaurant';
 import Cuisine from './Cuisine';
 import ScheduleForm from "./ScheduleForm";
 import UserReviews from './UserReviews';
+import RestaurantReviews from './RestaurantReviews'
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route exact path="/user/:id/reservations">
               <MyReservations />
+            </Route>
+            <Route exact path="/restaurant/:id/reviews">
+              <RestaurantReviews />
             </Route>
           </Switch>
         </Route>

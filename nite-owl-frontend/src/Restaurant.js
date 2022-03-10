@@ -36,11 +36,14 @@ function Restaurant() {
         <div>{leaveReview ? <ReviewForm id={id}/> : null}</div>
         <button onClick={handleMakeReservation}>{makeReservation?  'Close Form' : 'Make a Reservation'} </button>
         <div>{makeReservation?  <ScheduleForm restaurant={restaurant}/> : null} </div>
+        <h3>Reviews</h3><div>
+        <RestaurantReviews id={id} />
+        </div>
       </div>
       <div>
-        <h3>Reviews</h3>
+        
 
-        <RestaurantReviews id={id} />
+        
       </div>
     </div>
   );

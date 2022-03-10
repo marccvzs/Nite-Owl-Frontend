@@ -15,7 +15,6 @@ function ReviewForm({ id }) {
             [name]: value,
         })
     }
-    console.log(formData)
     function handleSubmit(e) {
         e.preventDefault();
         fetch('http://localhost:9292/reviews', {

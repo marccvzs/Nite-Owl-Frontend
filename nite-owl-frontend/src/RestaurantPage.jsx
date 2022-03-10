@@ -30,12 +30,13 @@ function RestaurantPage() {
     const pic = Object.values(img);
     const type = Object.keys(img);
     return (
-      <Link className="imgTile" to={{ pathname: `/restaurants/${type}` }}>
+      <Link key={type} className="imgTile" to={{ pathname: `/restaurants/${type}` }}>
         <img src={pic} alt="" />
         <p>{type}</p>
       </Link>
     );
   });
+
 
   return (
     <div>

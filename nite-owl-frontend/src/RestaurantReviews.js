@@ -18,6 +18,8 @@ function RestaurantReviews({ id }) {
             </div>
         )
     })
+    console.log(reviews)
+
 
   return (
     <div>
