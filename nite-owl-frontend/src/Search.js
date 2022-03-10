@@ -3,16 +3,20 @@ import React from 'react';
 
 function Search( { search, onSearch }) {
 
+
     function handleSearch(e) {
         onSearch(e.target.value)
     }
   return (
-    <div>
-        <h4>Search Restaurants</h4>
+    <div className="search">
+
+ 
+
         <form>
-            <input 
+            <input
+            className="searchBar" 
             type='text' 
-            placeholder='Restaurant Name' 
+            placeholder='Look Around'
             value={search}
             onChange={handleSearch}
             ></input>

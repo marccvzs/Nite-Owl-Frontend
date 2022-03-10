@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import RestaurantReviews from './RestaurantReviews';
+import { useParams, Link } from "react-router-dom";
+import RestaurantReviews from "./RestaurantReviews";
 
 function Restaurant() {
   const [restaurant, setRestaurant] = useState({});
@@ -20,13 +20,15 @@ function Restaurant() {
         <p className="description">{restaurant.description}</p>
         <p>{restaurant.address}</p>
         <p>{restaurant.price}</p>
-        <button>Make a Reservation</button>
+        <Link to={`/restaurant/${restaurant}/schedule`}>
+          <button>Make a Reservation</button>
+        </Link>
         <button>Leave a Review</button>
       </div>
       <div>
-      <h3>Reviews</h3>
-      
-      <RestaurantReviews id={id} />
+        <h3>Reviews</h3>
+
+        <RestaurantReviews id={id} />
       </div>
     </div>
   );

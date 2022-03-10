@@ -12,6 +12,11 @@ function MyReservations() {
     .then(r => r.json())
     .then(reservationsArray => setReservations(reservationsArray))
   }, [])
+
+  console.log(reservations)
+
+
+
   
   const reservationsList = reservations.map(res => {
     return (
@@ -22,11 +27,12 @@ function MyReservations() {
       num_guests={res.num_guests}
       res={res.restaurant} 
       />
+ 
     )
   })
   
   return (
-    <div>
+    <div id="reservations">
       {reservationsList}
       <UserReviews id={id}/>
     </div>

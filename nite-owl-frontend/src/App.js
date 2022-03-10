@@ -7,6 +7,7 @@ import Home from './Home';
 import MyReservations from './MyReservations';
 import Restaurant from './Restaurant';
 import Cuisine from './Cuisine';
+import ScheduleForm from "./ScheduleForm";
 import UserReviews from './UserReviews';
 
 function App() {
@@ -19,17 +20,20 @@ function App() {
         <Route>
           <NavBar />
           <Switch>
-          <Route path='/restaurants/:cuisine'>
+          <Route exact path='/restaurants/:cuisine'>
               <Cuisine/>
             </Route>
             <Route exact path="/restaurants">
               <RestaurantPage />
             </Route>
-            <Route path='/restaurant/:id'>
+            <Route exact path='/restaurant/:id'>
               <Restaurant/>
             </Route>
             <Route exact path="/user/:id/reservations">
               <MyReservations />
+            </Route>
+            <Route exact path="/restaurant/:id/schedule">
+              <ScheduleForm/>
             </Route>
           </Switch>
         </Route>
