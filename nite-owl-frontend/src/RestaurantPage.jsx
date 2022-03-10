@@ -42,11 +42,11 @@ function RestaurantPage() {
 
   return (
     <div>
-      <h2>Our Favorites</h2>
+      <h1>Our Favorites</h1>
   
         <div className="imgTileContainer">{allImages}</div>
 
-      <h2>Find Your New Favorite Spot</h2>
+      <h1>Find Your New Favorite Spot</h1>
       <Search search={search} onSearch={setSearch} />
       <RestaurantList search={search} />
       <ScheduleForm />

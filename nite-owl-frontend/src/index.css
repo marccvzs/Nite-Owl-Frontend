@@ -1,4 +1,4 @@
- {
+*{
   margin: 0;
 }
 body {
@@ -44,27 +44,28 @@ body {
 }
 #bannerLinks {
   display: flex;
-
   width: 100%;
   position: absolute;
-  bottom: 2%;
+  bottom: 50%;
+  left: 20%;
   align-items: center;
   justify-content: space-evenly;
 }
 .nav {
   color: #0e0020;
   font-size: 30px;
+  text-decoration: none;
 }
 .homeNav {
-  font-size: 50px;
+  font-size: 60px;
   color: #daa428;
   text-shadow: 0 0 15px #daa428, 0 0 10px #0e0020;
   z-index: 2;
 }
+
 .nav,
 .homeNav {
   position: relative;
-  text-decoration: none;
   position: relative;
   margin: 0 20px;
 }
@@ -74,8 +75,9 @@ body {
 .homeNav::before {
   background-color: #daa428;
 }
-.nav::before,
-.homeNav::before {
+.nav::before
+/* .homeNav::before  */
+{
   content: "";
   position: absolute;
   left: 0;
@@ -133,7 +135,7 @@ body {
 .imgTile img:hover {
   opacity: 0.8;
 }
-h2 {
+h1 {
   font-size: 50px;
   margin: 50px 0 0 20px;
 }
@@ -164,6 +166,7 @@ h2 {
 /* Restaurant/id Page */
 
 .restPageContent {
+  margin: 40px 20px 20px 20px;
   display:flex;
 
 }
@@ -173,10 +176,17 @@ h2 {
   flex-direction: column;
   margin-left:20px;
 }
-.restInfo h2
+.restInfo h2{
+  margin-top: 20px;
+  font-size: 50px;
+}
 .description {
-  width:90%
+  margin: 20px 0 20px 0;
+  font-size: 24px;
+  width:75%
 }
 button{
+  margin-top: 20px;
+
   width:100px;
 }
