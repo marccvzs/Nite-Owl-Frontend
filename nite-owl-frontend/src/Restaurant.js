@@ -13,7 +13,7 @@ function Restaurant() {
     fetch(`http://localhost:9292/restaurant/${id}`)
       .then((r) => r.json())
       .then((r) => setRestaurant(r));
-    }, [id]);
+  }, [id]);
 
   function handleMakeReservation() {
     setMakeReservation((makeReservation) => !makeReservation);
@@ -36,10 +36,14 @@ function Restaurant() {
           <button onClick={handleMakeReservation}>
             {makeReservation ? "Close Form" : "Make a Reservation"}{" "}
           </button>
-          <div>
-            {makeReservation ? <ScheduleForm restaurant={restaurant} /> : null}
-          </div>
-
+          <input type="checkbox" id="demo" />
+          <label
+          className="demo"
+            for="demo"
+            style={{ visibility: makeReservation ? "visible" : "hidden" }}
+          >
+              <ScheduleForm restaurant={restaurant} />
+          </label>
         </div>
       </div>
       <p className="reviewTitle">Reviews for {restaurant.restaurant_name}</p>
