@@ -1,15 +1,13 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import './App.css';
-import NavBar from './NavBar';
-import RestaurantPage from './RestaurantPage';
-import Home from './Home';
-import MyReservations from './MyReservations';
-import Restaurant from './Restaurant';
-import Cuisine from './Cuisine';
-import ScheduleForm from "./ScheduleForm";
-import UserReviews from './UserReviews';
-import RestaurantReviews from './RestaurantReviews'
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import "./App.css";
+import NavBar from "./NavBar";
+import RestaurantPage from "./RestaurantPage";
+import Home from "./Home";
+import MyReservations from "./MyReservations";
+import Restaurant from "./Restaurant";
+import Cuisine from "./Cuisine";
+import RestaurantReviews from "./RestaurantReviews";
 
 function App() {
   return (
@@ -21,14 +19,14 @@ function App() {
         <Route>
           <NavBar />
           <Switch>
-          <Route exact path='/restaurants/:cuisine'>
-              <Cuisine/>
+            <Route exact path="/restaurants/:cuisine">
+              <Cuisine />
             </Route>
             <Route exact path="/restaurants">
               <RestaurantPage />
             </Route>
-            <Route exact path='/restaurant/:id'>
-              <Restaurant/>
+            <Route exact path="/restaurant/:id">
+              <Restaurant />
             </Route>
             <Route exact path="/user/:id/reservations">
               <MyReservations />

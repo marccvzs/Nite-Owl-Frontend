@@ -15,6 +15,7 @@ function RestaurantItem({ list }) {
             src={rest.restaurant_image}
             alt={rest.restaurant_name}
           ></img>
+          </Link>
           <div className="blurb">
             <p style={{ fontSize: "36px" }}>{rest.restaurant_name}</p>
             <br></br>
@@ -24,7 +25,7 @@ function RestaurantItem({ list }) {
             <br></br>
             <p style={{ fontSize: "20px" }}>{rest.price}</p>
           </div>
-        </Link>
+        
       </div>
     );
   });

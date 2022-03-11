@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import banner from "./images/NewBanner.jpg";
+import Owls from "./images/Owls.JPG";
 
 function Home() {
   return (
@@ -9,11 +9,12 @@ function Home() {
         <div id="banner_image"></div>
         <div id="banner_divider"></div>
         <p id="title">Nite Owl</p>
+        <div className="owlContainer">
+        <img src={Owls}></img>
+        </div>
         <div id="bannerLinks">
-        {/* <Link className="homeNav" to='/'>Home</Link> */}
         <Link className="homeNav" to='/restaurants'>Enter</Link>
         <div className="homeNavDivider"></div>
-        {/* <Link className="homeNav" to='/reservations'>Your Reservations</Link> */}
         </div>
       </div>
     </>

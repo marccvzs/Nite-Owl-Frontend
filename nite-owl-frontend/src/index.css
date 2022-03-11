@@ -1,9 +1,14 @@
 * {
   margin: 0;
+
+  color: #fffbf0;
 }
+/* elements styling */
 body {
-  font-family: "Hubballi", cursive;
+  font-family: "Raleway", sans-serif;
+  background: rgb(10, 8, 12);
 }
+
 #banner {
   position: relative;
   width: 100%;
@@ -19,10 +24,22 @@ body {
   height: 100%;
   background-image: url("./images/TrialBanner.jpg");
   background-size: cover;
-  filter: brightness(90%);
+  filter: brightness(80%);
   background-position: center;
   -webkit-clip-path: polygon(0 37%, 100% 14%, 100% 100%, 0 100%);
   clip-path: polygon(0 37%, 100% 14%, 100% 100%, 0 100%);
+}
+.owlContainer {
+  position: relative;
+  bottom: 98vh;
+  left: 95vh;
+}
+#banner img {
+  z-index: 4;
+  width: 8vw;
+  box-shadow: 0 0 15px 1px #524462, 0 0 3px #fffbf0;
+  border-radius: 100px;
+  position: absolute;
 }
 
 #banner_divider {
@@ -32,32 +49,55 @@ body {
   position: absolute;
   top: 23%;
   left: 4%;
-  box-shadow: 0 0 15px 1px #524462, 0 0 3px #ffffff;
+  box-shadow: 0 0 15px 1px #524462, 0 0 3px #fffbf0;
   width: 38%;
 }
 
 .navBar {
-  background-color: hsl(266, 100%, 6%);
+  background: rgb(10, 8, 12);
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  height: 70px;
+  justify-content: space-between;
+
+  height: 88px;
   /* position:fixed; */
   opacity: 1;
   font-family: "Megrim", cursive;
-  text-shadow: 0 0 15px #524462, 0 0 4px #ffffff;
-  border-bottom: 3px solid white;
+  text-shadow: 0 0 15px #524462, 0 0 4px #fffbf0;
+  border-bottom: 3px solid #fffbf0;
 }
 
 .navTitle {
-  color: white;
   font-family: "Megrim", cursive;
   font-size: 60px;
-  margin-right: auto;
-  /* margin-top: 25px; */
+  align-self: start;
   margin-left: 7px;
-  text-shadow: 0 0 15px #524462, 0 0 4px #ffffff;
+}
+.navLinks {
+  display: flex;
+  justify-content: flex-end;
+}
+.nav {
+  color: #fffbf0;
+  font-size: 35px;
+  position: relative;
+  text-shadow: 0 0 15px #524462, 0 0 4px #fffbf0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav:hover {
+  text-shadow: 0 0 4px rgb(248, 235, 190), 0 0 3px #fffbf0, 0 0 1px #0e0020;
+}
+.navBar img {
+  width: 110px;
+  margin-top: 80px;
+  margin-right: 10vw;
+  border-radius: 100px;
+  box-shadow: 0 0 15px 1px #524462, 0 0 3px #fffbf0;
 }
 
 #bannerLinks {
@@ -69,20 +109,20 @@ body {
   align-items: center;
   justify-content: space-evenly;
 }
-.nav {
-  color: white;
-  font-size: 30px;
-  position: relative;
-}
+
 .homeNav {
   font-size: 60px;
   color: #daa428;
-  text-shadow: 0 0 10px #daa428, 0 0 8px #0a043c;
+  text-shadow: 0 0 10px #daa428, 0 0 2px rgb(248, 235, 190), 0 0 2px #0e0020;
   font-weight: 300;
   position: fixed;
   left: 36%;
   bottom: 50%;
-  /* width  */
+  background: transparent;
+}
+.homeNav:hover {
+  text-shadow: 0 0 12px#daa428, 0 0 2px rgb(248, 235, 190), 0 0 3px #fffbf0,
+    0 0 1px #0e0020;
 }
 .homeNavDivider {
   background: #daa428;
@@ -101,28 +141,6 @@ body {
   margin: 0 20px;
   text-decoration: none;
 }
-.nav::before {
-  background-color: #a0c1b8;
-}
-.homeNav::before {
-  background-color: #daa428;
-}
-.nav::before
-/* .homeNav::before  */ {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 3px;
-  width: 100%;
-  height: 8px;
-  z-index: -1;
-  transition: all 0.3s ease-in-out;
-}
-.nav:hover::before,
-.homeNav:hover::before {
-  bottom: 0;
-  height: 100%;
-}
 
 #title {
   position: absolute;
@@ -130,46 +148,55 @@ body {
   font-size: 160px;
   top: 0%;
   left: 3%;
-  text-shadow: 0 0 15px #524462, 0 0 4px #ffffff;
+  text-shadow: 0 0 15px #524462, 0 0 4px #fffbf0;
   font-family: "Megrim", cursive;
   font-weight: 600;
 }
 .imgTileContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: scroll;
   width: 100%;
+  background: rgb(61, 55, 66)
 }
 .imgTile {
   height: 30vh;
-  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 8px solid #0e0020;
+  border: 8px solid rgb(10, 8, 12);
+
+}
+.type {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .imgTile p {
-  font-size: 40px;
+  font-size: 35px;
   position: absolute;
   color: #0a043c;
-  text-shadow: 0 0 15px #524462, 0 0 4px #ffffff;
+  text-shadow: 0 0 3px #524462, 0 0 4px #fffbf0;
 }
 .imgTile img {
   transition: opacity 0.5s ease;
+  filter: brightness(40%);
   opacity: 0.3;
-  max-height: 100%;
-  width: 100%;
+  height: 30vh;
+  width: auto;
   object-fit: cover;
-  padding: 2px;
   flex-grow: 1;
 }
 .imgTile img:hover {
+
   opacity: 0.8;
 }
 h1 {
   font-size: 50px;
   padding: 10px 0 10px 10px;
-  background-color: #0e0020;
-  color: white;
+  background: rgb(10, 8, 12);
+  color: #fffbf0;
 }
 .restaurantListContainer {
   margin-top: 50px;
@@ -180,10 +207,10 @@ h1 {
 }
 .listItem {
   display: flex;
-  flex: 35%;
+  flex-direction: row;
+  flex: 34%;
   padding-left: 20px;
   margin-bottom: 20px;
-  width: 25%;
   align-items: center;
 }
 .listImage {
@@ -197,79 +224,32 @@ h1 {
   text-decoration: none;
 }
 
-/* Restaurant/id Page */
-
-.restPageContent {
-  margin: 40px 20px 20px 20px;
-  display: flex;
-}
-.restPageContent img{
-  width: 50vw;
-  height: 50vw
-}
-
-.restInfo {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-}
-.restInfo h2 {
-  margin-top: 20px;
-  font-size: 50px;
-}
-.description {
-  margin: 20px 0 20px 0;
-  font-size: 24px;
-  width: 75%;
-}
-button {
-  margin-top: 20px;
-
-  width: 100px;
-}
-
 /* Search */
-.searchHeader {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.search {
-  color: white;
-  font-size: 20px;
-  background: #0e0020;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-right: 5%;
-  padding-bottom: 10px;
-}
-
 .searchBar {
   background-color: rgb(72, 63, 85);
   border: none;
-  padding: 4px;
-  height: 50px;
-  width: 400px;
+  padding: 4px 0 4px 20px;
+  height: 25px;
+  width: 30vw;
+  margin: 15px 0 0px 16vw;
   border-radius: 5px;
-  padding-bottom: 10px;
+  font-size: 20px;
 }
 
 /* Cuisine group */
 .cuisineItem {
+
   display: flex;
   flex: 35%;
   padding-left: 20px;
   margin-bottom: 20px;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .cuisineBlurb {
   margin-top: 40px;
-  margin-left: 30px;
+  margin-left: 60px;
   max-height: 500px;
   width: 40%;
 }
@@ -280,10 +260,10 @@ button {
   opacity: 1;
 }
 
-.cal{
-  width:80%;
+.cal {
+  width: 80%;
   margin: 40px;
-  padding:0;
+  padding: 0;
 }
 
 /* .cal div{
@@ -293,3 +273,212 @@ button {
 .cal button{
   background-color: black;
 } */
+
+/* Restaurant/id Page */
+
+.restPageContent {
+  margin: 80px 20px 20px 20px;
+  display: flex;
+}
+.restPageContent img {
+  width: 50vw;
+  height: 50vw;
+}
+
+.restInfo {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.restBlurb {
+  align-self: start;
+  margin-left: 20px;
+}
+.restInfo h2 {
+  margin-top: 20px;
+  font-size: 50px;
+}
+.description {
+  margin: 20px 0 20px 0;
+  font-size: 24px;
+  width: 80%;
+}
+.restInfo button {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 80%;
+  margin-bottom: 20px;
+  font-size: 15px
+  
+}
+
+/* Reservations and Reviews */
+
+.reviewContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+fieldset {
+  border: none;
+}
+
+#stars {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+#stars p{
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#stars button {
+  background: transparent;
+  border: none;
+  width: 30%;
+  font-size: 1.7vw;
+  color: gray;
+}
+
+#stars button:hover {
+  color: #daa428;
+  text-shadow: 0 0 10px #f8c13f, 0 0 3px #fffbf0;
+}
+#stars button:focus {
+  color: #daa428;
+  text-shadow: 0 0 10px #f8c13f, 0 0 3px #fffbf0;
+}
+textarea {
+  resize: none;
+  width: 60vh;
+  height: 8vh;
+  margin: 10px 0 15px 0;
+  outline: none;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  background-color: #524462
+
+}
+
+textarea:focus {
+  background: #fffbf0;
+  background-color: #635179
+}
+
+.reviewForm input {
+  background: transparent;
+  border: none;
+  margin: 0 30px 0 30px;
+}
+
+.submitForm {
+  margin: 20px 30px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items:center
+}
+.calendar{
+  margin-top:10px;
+  margin-bottom: 30px;
+}
+
+.submitForm label{
+  width: 100%;
+}
+
+.menus{
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 5vh;
+  align-items: center
+}
+.menus button{
+width: 20% ; 
+border-bottom: 3px solid #fffbf0;
+}
+
+select{
+  background-color: rgb(72, 63, 85);
+  border-radius: 5px;
+  width: 20vw;
+  margin-left: 5vw;
+}
+.reviewTitle {
+  font-size: 45px;
+  margin-left: 40px;
+  margin-bottom: 25px;
+}
+
+/* My reservations page */
+
+.reviewsList {
+  margin-left: 40px;
+  width: 70%;
+  font-weight: 200;
+}
+.review {
+  background-color: rgb(72, 63, 85);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 9px;
+}
+#reservations{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.reviewButtons input{
+  border-bottom: 1px solid #fffbf0;
+}
+.myReservations, .myReviews{
+  width: 40%;
+  margin-top: 60px;
+  height: 100vh;
+  overflow: scroll;
+}
+.myReservations h2, .myReviews h2{
+
+}
+
+.reservation, .review{
+background-color: rgb(72, 63, 85);
+margin-bottom: 15px;
+margin-top: 20px;
+border-radius: 5px;
+padding: 15px;
+}
+
+.review p{
+  margin-bottom: 10px;
+}
+
+.review h3{
+  font-size: 30px;
+  margin: 7px 0 7px 0;
+}
+.reservation h3{
+  font-size: 30px;
+  margin-bottom: 2px;
+}
+
+

@@ -12,7 +12,6 @@ function Cuisine() {
       .then((data) => setCuisineArray(data));
   }, [cuisine]);
 
-
   const rest = cuisineArray.map((r) => {
     return <CuisineGroup key={r.id} r={r} />;
   });

@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RestaurantList from "./RestaurantList";
 import Search from "./Search";
-import brewery from "./images/Brewery.jpg";
+import breweries from "./images/Brewery.jpg";
 import comfort from "./images/Comfort.jpg";
 import communal from "./images/Communal.jpg";
 import french from "./images/French.jpg";
 import indian from "./images/Indian.jpg";
 import italian from "./images/Italian.jpg";
 import latin from "./images/Latin.jpg";
-import pate from "./images/Winery.jpg";
+import wineries from "./images/Winery.jpg";
 import vegan from "./images/Vegan.jpg";
 
 function RestaurantPage() {
@@ -18,12 +18,12 @@ function RestaurantPage() {
     { italian: italian },
     { indian: indian },
     { latin: latin },
-    { pate: pate },
+    { wineries: wineries},
     { vegan: vegan },
     { french: french },
     { communal: communal },
     { comfort: comfort },
-    { brewery: brewery },
+    { breweries: breweries },
   ];
 
   const allImages = images.map((img) => {
@@ -31,8 +31,9 @@ function RestaurantPage() {
     const type = Object.keys(img);
     return (
       <Link key={type} className="imgTile" to={{ pathname: `/restaurants/${type}` }}>
-        <img src={pic} alt="" />
-        <p>{type}</p>
+        <div className="type"><img src={pic} alt="" />
+        <p>{type}</p></div>
+        
       </Link>
     );
   });
