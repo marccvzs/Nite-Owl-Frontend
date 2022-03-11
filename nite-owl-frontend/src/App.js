@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/restaurant/:id">
               <Restaurant />
             </Route>
-            <Route exact path="/user/:id/reservations">
+            <Route exact path="/user/11/reservations">
               <MyReservations />
             </Route>
             <Route exact path="/restaurant/:id/reviews">
