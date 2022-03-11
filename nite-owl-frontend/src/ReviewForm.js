@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ReviewForm({ id }) {
+function ReviewForm({ id, onUpdate }) {
     const [formData, setFormData] = useState({
         review: '',
         stars: '',
@@ -15,6 +15,7 @@ function ReviewForm({ id }) {
             [name]: value,
         })
     }
+
     function handleSubmit(e) {
         e.preventDefault();
         fetch('http://localhost:9292/reviews', {
@@ -24,13 +25,13 @@ function ReviewForm({ id }) {
             },
             body: JSON.stringify({
                 restaurant_id: id,
-                user_id: 161,
+                user_id: 8,
                 review: formData.review,
                 stars: formData.stars,
             })
         })
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(newReview => window.location.reload(true))
     }
 
 
