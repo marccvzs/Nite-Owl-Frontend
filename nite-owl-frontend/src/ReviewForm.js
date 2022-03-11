@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 function ReviewForm({ id, onUpdate }) {
     const [formData, setFormData] = useState({
@@ -31,30 +33,56 @@ function ReviewForm({ id, onUpdate }) {
             })
         })
         .then(r => r.json())
-        .then(newReview => window.location.reload(true))
+        .then(newReview =>   <Link to={{ pathname: `/restaurant/${id}`}}/>)
     }
 
-
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="stars">How many Stars: </label>
-            <select name="stars" id="stars" onChange={handleChange}>
-                <option value="⭐️">⭐️</option>
-                <option value="⭐️ ⭐️">⭐️ ⭐️</option>
-                <option value="⭐️ ⭐️ ⭐️">⭐️ ⭐️ ⭐️</option>
-            </select>
-            <textarea 
-            type='text' 
-            placeholder='Leave a Review' 
-            value={formData.review} 
-            name='review'
-            onChange={handleChange}/>
-            <input type='submit' />
-            <input type='reset' />
-        </form>
+    <div className="reviewContainer">
+      <form className="reviewForm" onSubmit={handleSubmit}>
+        <fieldset id="stars" onChange={handleChange}>
+          <p>Rating</p>
+          <div className="stars">
+            <button
+              type="button"
+              onClick={handleChange}
+              name="stars"
+              value="⭐️"
+            >
+              &#9733;
+            </button>
+            <button
+              type="button"
+              onClick={handleChange}
+              name="stars"
+              value="⭐️ ⭐️"
+            >
+              &#9733; &#9733;
+            </button>
+            <button
+              type="button"
+              onClick={handleChange}
+              name="stars"
+              value="⭐️ ⭐️ ⭐️"
+            >
+              &#9733; &#9733; &#9733;
+            </button>
+          </div>
+          <textarea
+          type="text"
+          placeholder="Leave a Review"
+          value={formData.review}
+          name="review"
+          onChange={handleChange}
+        />
+        <div className="reviewButtons">
+        <input type="submit" />
+        <input type="reset" />
+        </div>
+        </fieldset>
+        
+      </form>
     </div>
-  )
+  );
 }
 
-export default ReviewForm
+export default ReviewForm;
