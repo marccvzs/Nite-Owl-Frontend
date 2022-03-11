@@ -313,6 +313,47 @@ h1 {
   font-size: 15px
 }
 
+#demo{
+  position: relative;
+  bottom: 7vh;
+  width: 50vw;
+  height: 8vh;
+  opacity: 0;
+}
+.demo>*{
+  visibility: hidden;
+opacity:0;
+transition: opacity ease-in-out .5s;
+}
+
+#demo:checked + .demo>* {
+  opacity:1;
+  visibility:visible;
+  transition: opacity ease-in-out .5s;
+}
+
+#demo2{
+  position: relative;
+  right:2vw;
+  bottom: 8vh;
+  width: 50vw;
+  height: 8vh;
+  /* opacity: 0; */
+}
+.demo2>*{
+  visibility: hidden;
+opacity:0;
+transition: opacity ease-in-out .5s;
+}
+
+#demo2:checked + .demo2>* {
+  opacity:1;
+  visibility:visible;
+  transition: opacity ease-in-out .5s;
+}
+
+
+
 
 /* Reservations and Reviews */
 
@@ -326,24 +367,21 @@ h1 {
   background: transparent;
   border: none;
   border-bottom: 1px solid rgb(255, 255, 255);
-  width: 80%;
+  width: 65%;
   margin-bottom: 20px;
   font-size: 15px;
-  margin-left:40px;
-  
+  margin-left:10px;
+
 }
 
-.reviewsList button:active{
-  
-  transition: margin-left 0.5s ease;
-  margin-left: 10px;
-}
 
 
 .reviewForm {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 1vh;
+  overflow: visible
 }
 fieldset {
   border: none;
@@ -413,7 +451,8 @@ textarea:focus {
   margin: 20px 30px 20px 30px;
   display: flex;
   flex-direction: column;
-  align-items:center
+  align-items:center;
+  height: 1vh;
 }
 .calendar{
   margin-top:10px;

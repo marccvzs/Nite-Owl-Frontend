@@ -8,7 +8,7 @@ function MyReservations() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:9292/user/${id}/reservations`)
+    fetch(`http://localhost:9292/user/11/reservations`)
       .then((r) => r.json())
       .then((reservationsArray) => setReservations(reservationsArray));
   }, []);
