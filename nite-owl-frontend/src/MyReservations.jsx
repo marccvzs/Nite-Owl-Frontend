@@ -24,7 +24,6 @@ function MyReservations() {
     );
   });
 
-
   return (
     <div id="reservations">
       <div className="myReservations">

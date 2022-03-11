@@ -16,12 +16,14 @@ function RestaurantReviews({ id }) {
   }
 
   function handleSubmit(newReview) {
+    console.log(newReview)
     setReviews(reviews => [...reviews, newReview])
   }
 
   const reviewsList = reviews.map((r) => {
     return (
       <div key={r.id}>
+        <div className='review'>
         <p>{r.stars}</p>
         <p style={{ fontSize: "20px", margin: "10px 0 15px 0" }}>
           <span style={{ fontWeight: "600" }}>
@@ -30,19 +32,16 @@ function RestaurantReviews({ id }) {
           {' '+r.review.split(' ').slice(4, r.review.length-1).join(' ')}
         </p>
         <p>-{r.user.name}</p>
+        </div>
       </div>
     );
   });
-  const review = reviewsList.map((r) => {
-    return <div className="review">{r}</div>;
-  });
-  
 
   return (
     <div className="reviewsList">
       <button onClick={() => handleLeaveReview()}>{leaveReview ? 'Exit' : 'Leave a'} Review</button>
       <div>{leaveReview ? <ReviewForm id={id} onUpdate={handleSubmit}/> : null}</div>
-      <div>{review}</div>
+      <div>{reviewsList}</div>
     </div>
   );
 }

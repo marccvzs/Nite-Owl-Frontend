@@ -11,13 +11,13 @@ function ReviewForm({ id, onUpdate }) {
     function handleChange(e) {
         const value = e.target.value;
         const name = e.target.name;
-
+        
         setFormData({
             ...formData,
             [name]: value,
         })
     }
-
+    console.log(formData)
     function handleSubmit(e) {
         e.preventDefault();
         fetch('http://localhost:9292/reviews', {
@@ -33,7 +33,20 @@ function ReviewForm({ id, onUpdate }) {
             })
         })
         .then(r => r.json())
-        .then(newReview =>   <Link to={{ pathname: `/restaurant/${id}`}}/>)
+        .then(newReview => {
+            console.log(newReview)
+            onUpdate(
+                {
+                    id: newReview.id,
+                    restaurant_id: newReview.restaurant_id,
+                    stars: newReview.stars,
+                    review: newReview.review,
+                    user: {
+                        name: 'Lydia Pferrer'
+                    }
+                }
+            )
+        })
     }
 
   return (
